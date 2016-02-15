@@ -3,7 +3,11 @@
 
 def build(ctx):
 
-    pass
+    ctx(
+        rule="pdftotext -layout -enc 'UTF-8' ${SRC} ${TGT}",
+        source=ctx.path_to(ctx, "IN_DATA", "HandbuchDtAGs_1925_1_Band.pdf"),
+        target=ctx.path_to(ctx, "OUT_DATA", "HandbuchDtAGs_1925_1_Band.txt")
+    )
 
     # # Illustrate simple use of run_py_script
     # ctx(
