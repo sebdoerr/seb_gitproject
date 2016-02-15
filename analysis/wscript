@@ -1,0 +1,17 @@
+#! python
+
+
+def build(ctx):
+
+    # Illustrate use of run_py_script with automatic model specification.
+    ctx(
+        features='run_py_script',
+        source='textscan.py',
+        deps=[
+            ctx.path_to(ctx, 'OUT_DATA', 'HandbuchDtAGs_1925_1_Band.txt')
+        ],
+        target=[
+            ctx.path_to(ctx, 'OUT_ANALYSIS', 'datafirmdata.xls'),
+        ],
+        name='textscan'
+    )

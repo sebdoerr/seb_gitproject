@@ -1,0 +1,12 @@
+#! python
+
+
+def build(ctx):
+
+    # Illustrate simple use of run_py_script
+    ctx(
+        features='run_py_script',
+        source='pdf_to_txt.py',
+        target=ctx.path_to(ctx, 'OUT_DATA', 'HandbuchDtAGs_1925_1_Band.txt'),
+        name='pdf_to_txt'
+    )
